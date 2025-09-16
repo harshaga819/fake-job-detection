@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Truth Finder - AI-Powered Job Scam Detection</title>
+    <meta name="description"
+        content="Protect yourself from job scams with our AI-powered analysis tool. Get instant insights into job posting authenticity and comprehensive fraud education." />
+    <meta name="keywords"
+        content="job scam detection, employment fraud, fake job postings, job safety, scam prevention" />
+    <meta name="author" content="Job Truth Finder" />
+
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="hero-background">
+            <div class="hero-overlay"></div>
+        </div>
+
+        <div class="hero-content">
+            <div class="container">
+                <div class="hero-text">
+                    <div class="hero-title">
+                        <svg class="shield-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                        </svg>
+                        <h1>The Truth Finder</h1>
+                    </div>
+                    <p class="hero-description">
+                        Navigate your job search with confidence. Our AI-powered tool analyzes job postings for red flags, helping you identify and avoid fraudulent opportunities.
+                    </p>
+
+                    <!-- Analysis Tool -->
+                    <div class="analysis-card">
+                        <div class="analysis-form">
+                            <label for="job-description" class="form-label">
+                                The job description here for analysis:
+                            </label>
+                            <textarea id="job-description" class="job-textarea"
+                                placeholder="Copy and paste the job posting content here... Include details like salary, requirements, company information, and job responsibilities."></textarea>
+
+                            <button id="analyze-btn" class="analyze-button">
+                                <svg class="button-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <circle cx="11" cy="11" r="8" />
+                                    <path d="m21 21-4.35-4.35" />
+                                </svg>
+                                <span class="button-text">Analyze Job Posting</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Analysis Results -->
+                    <div id="analysis-results" class="analysis-results hidden">
+                        <div class="result-header">
+                            <div id="result-status" class="result-status">
+                                <svg class="result-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                                    <polyline points="22,4 12,14.01 9,11.01" />
+                                </svg>
+                                <div class="result-text">
+                                    <h3 id="result-title">Likely Genuine</h3>
+                                    <p id="result-confidence">Confidence: 85%</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="result-details">
+                            <div id="risk-factors" class="risk-section hidden">
+                                <h4 class="section-title">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path
+                                            d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z" />
+                                        <line x1="12" y1="9" x2="12" y2="13" />
+                                        <line x1="12" y1="17" x2="12.01" y2="17" />
+                                    </svg>
+                                    Risk Factors Found
+                                </h4>
+                                <div id="risk-badges" class="badge-container"></div>
+                            </div>
+
+                            <div id="positive-indicators" class="positive-section hidden">
+                                <h4 class="section-title">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                                        <polyline points="22,4 12,14.01 9,11.01" />
+                                    </svg>
+                                    Positive Indicators
+                                </h4>
+                                <div id="positive-badges" class="badge-container"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Fake Job Info Section -->
+    <section class="info-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Recognize the Red Flags</h2>
+                <p>Knowledge is your best defense. Learn to spot the common characteristics of fraudulent job postings to keep your job search safe and secure.
+                </p>
+            </div>
+
+            <!-- Red Flags Grid -->
+                <div class="red-flags-grid">
+                    <div class="red-flag-card fade-in">
+                        <div class="flag-header">
+                            <div class="flag-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23" /><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" /></svg>
+                            </div>
+                            <h3>Unrealistic Salary</h3>
+                        </div>
+                        <div class="flag-content">
+                            <p>Offers that seem too good to be true, promising high pay for little work or experience.</p>
+                            <div class="example-badges">
+                                <span class="example-badge">₹50,000/week for data entry</span>
+                                <span class="example-badge">Earn ₹10,000/hour</span>
+                            </div>
+                    </div>
+                </div>
+
+                <div class="red-flag-card fade-in">
+                    <div class="flag-header">
+                        <div class="flag-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10" /><polyline points="12 6 12 12 16 14" /></svg>
+                        </div>
+                        <h3>High Urgency</h3>
+                    </div>
+                    <div class="flag-content">
+                        <p>Pressure to accept an offer immediately without giving you time to think or research.</p>
+                        <div class="example-badges">
+                            <span class="example-badge">Offer expires today!</span>
+                            <span class="example-badge">Only 2 spots left</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="red-flag-card fade-in">
+                    <div class="flag-header">
+                        <div class="flag-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" /><circle cx="12" cy="12" r="3" /></svg>
+                        </div>
+                        <h3>Vague Descriptions</h3>
+                    </div>
+                     <div class="flag-content">
+                        <p>Lack of specific details about the job responsibilities, company, or necessary qualifications.</p>
+                        <div class="example-badges">
+                            <span class="example-badge">Work from home</span>
+                            <span class="example-badge">No skills needed</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="red-flag-card fade-in">
+                    <div class="flag-header">
+                        <div class="flag-icon">
+                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" /><polyline points="22,6 12,13 2,6" /></svg>
+                        </div>
+                        <h3>Unprofessional Communication</h3>
+                    </div>
+                     <div class="flag-content">
+                        <p>Use of generic email addresses (like @gmail.com) instead of a corporate domain, plus poor grammar and spelling.</p>
+                        <div class="example-badges">
+                            <span class="example-badge">hr.recruiter@gmail.com</span>
+                            <span class="example-badge">Multiple typos</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="red-flag-card fade-in">
+                    <div class="flag-header">
+                        <div class="flag-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" /><circle cx="9" cy="7" r="4" /></svg>
+                        </div>
+                        <h3>No Interview</h3>
+                    </div>
+                    <div class="flag-content">
+                        <p>Offering a job without a formal interview process, or conducting interviews through text/chat apps.</p>
+                        <div class="example-badges">
+                            <span class="example-badge">Instant hiring</span>
+                            <span class="example-badge">Chat-based interview</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="red-flag-card fade-in">
+                    <div class="flag-header">
+                        <div class="flag-icon">
+                           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2" ry="2" /><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16" /></svg>
+                        </div>
+                        <h3>Upfront Payment</h3>
+                    </div>
+                     <div class="flag-content">
+                        <p>Requesting payment for training materials, background checks, or equipment. Legitimate employers never ask for money.</p>
+                        <div class="example-badges">
+                            <span class="example-badge">Pay for starter kit</span>
+                            <span class="example-badge">Training fee required</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Protection Tips -->
+            <div class="protection-card">
+                <div class="protection-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z" />
+                        <line x1="12" y1="7" x2="12" y2="19" />
+                        <line x1="12" y1="17" x2="12.01" y2="17" />
+                    </svg>
+                </div>
+                <div class="protection-content">
+                    <h3>How to Protect Yourself</h3>
+                    <div class="protection-tips">
+                        <div class="tip">
+                            <div class="tip-dot"></div>
+                            <p>Research the company thoroughly using official websites and reviews</p>
+                        </div>
+                        <div class="tip">
+                            <div class="tip-dot"></div>
+                            <p>Verify contact information and physical address</p>
+                        </div>
+                        <div class="tip">
+                            <div class="tip-dot"></div>
+                            <p>Be skeptical of jobs that seem too good to be true</p>
+                        </div>
+                        <div class="tip">
+                            <div class="tip-dot"></div>
+                            <p>Never provide personal financial information upfront</p>
+                        </div>
+                        <div class="tip">
+                            <div class="tip-dot"></div>
+                            <p>Trust your instincts - if something feels wrong, it probably is</p>
+                        </div>
+                        <div class="tip">
+                            <div class="tip-dot"></div>
+                            <p>Use legitimate job boards and company career pages</p>
+                        </div>
+                        <div class="tip">
+                            <div class="tip-dot"></div>
+                            <p>Ask detailed questions about the role and company during interviews</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Statistics Section -->
+    <section class="stats-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>The Growing Threat of Job Scams</h2>
+                <p>Understanding the scope and impact of employment fraud helps you stay vigilant and protected.</p>
+            </div>
+
+            <!-- Statistics Grid -->
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-icon danger">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+                    </div>
+                    <h3>14M</h3>
+                    <p class="stat-label">Job Scam Reports</p>
+                    <p class="stat-desc">Reported annually worldwide</p>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-icon primary">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                    </div>
+                    <h3>3.2M</h3>
+                    <p class="stat-label">People Affected</p>
+                    <p class="stat-desc">Fall victim to job scams yearly</p>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-icon danger">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="22,12 18,12 15,21 9,3 6,12 2,12" />
+                        </svg>
+                    </div>
+                    <h3>67%</h3>
+                    <p class="stat-label">Increase in Scams</p>
+                    <p class="stat-desc">Growth in online job fraud since 2020</p>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-icon success">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                        </svg>
+                    </div>
+                    <h3>89%</h3>
+                    <p class="stat-label">Detection Rate</p>
+                    <p class="stat-desc">Of scams identified by our analysis</p>
+                </div>
+            </div>
+
+            <!-- Scam Types Breakdown -->
+            <div class="scam-breakdown">
+                <h3>Most Common Types of Job Scams</h3>
+                <div class="scam-types">
+                    <div class="scam-type">
+                        <div class="scam-info">
+                            <h4>Work-from-Home Scams</h4>
+                            <p>Fake remote job opportunities</p>
+                        </div>
+                        <span class="percentage">45%</span>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 45%"></div>
+                        </div>
+                    </div>
+                    <div class="scam-type">
+                        <div class="scam-info">
+                            <h4>Pyramid Schemes</h4>
+                            <p>Multi-level marketing disguised as jobs</p>
+                        </div>
+                        <span class="percentage">23%</span>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 23%"></div>
+                        </div>
+                    </div>
+                    <div class="scam-type">
+                        <div class="scam-info">
+                            <h4>Fake Government Jobs</h4>
+                            <p>Impersonating official positions</p>
+                        </div>
+                        <span class="percentage">18%</span>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 18%"></div>
+                        </div>
+                    </div>
+                    <div class="scam-type">
+                        <div class="scam-info">
+                            <h4>Identity Theft</h4>
+                            <p>Collecting personal information</p>
+                        </div>
+                        <span class="percentage">14%</span>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 14%"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <!-- Main Footer Content -->
+            <div class="footer-content">
+                <!-- Brand Section -->
+                <div class="footer-brand">
+                    <div class="footer-logo">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                        </svg>
+                        <h3>Job Truth Finder</h3>
+                    </div>
+                    <p>
+                        Empowering job seekers with AI-powered scam detection and comprehensive
+                        fraud education to ensure safe and successful employment searches.
+                    </p>
+                </div>
+
+                <!-- Quick Tips -->
+                <div class="footer-section">
+                    <h4>Quick Safety Tips</h4>
+                    <ul class="safety-tips">
+                        <li>
+                            <div class="tip-bullet"></div>
+                            Never pay upfront fees for job opportunities
+                        </li>
+                        <li>
+                            <div class="tip-bullet"></div>
+                            Verify company information independently
+                        </li>
+                        <li>
+                            <div class="tip-bullet"></div>
+                            Be cautious of jobs requiring personal financial data
+                        </li>
+                        <li>
+                            <div class="tip-bullet"></div>
+                            Trust legitimate job boards and company websites
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Emergency Contacts -->
+                <div class="footer-section">
+                    <h4>Report Job Scams (India)</h4>
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <p class="contact-title">National Cyber Crime Portal</p>
+                            <p class="contact-detail">
+                                <a href="https://cybercrime.gov.in" target="_blank">cybercrime.gov.in</a>
+                            </p>
+                        </div>
+                        <div class="contact-item">
+                            <p class="contact-title">Helpline Number</p>
+                            <p class="contact-detail">1930</p>
+                        </div>
+                        <div class="contact-item">
+                            <p class="contact-title">National Career Service (NCS), Ministry of Labour</p>
+                            <p class="contact-detail">
+                                <a href="https://www.ncs.gov.in" target="_blank">ncs.gov.in</a>
+                            </p>
+                        </div>
+                        <div class="contact-item">
+                            <p class="contact-title">Local Police / Cyber Crime Cell</p>
+                            <p class="contact-detail">File FIR with supporting evidence</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Resources Section -->
+            <div class="footer-resources">
+    <h4>Additional Resources (India)</h4>
+    <div class="resources-grid">
+        
+        <div class="resource-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
+                <polyline points="15,3 21,3 21,9"/>
+                <line x1="10" y1="14" x2="21" y2="3"/>
+            </svg>
+            <div>
+                <a href="https://cybercrime.gov.in/" target="_blank" rel="noopener noreferrer">
+                    <h5>Indian Cyber Crime Portal</h5>
+                </a>
+                <p>Government portal for reporting cybercrime and scams</p>
+            </div>
+        </div>
+
+        <div class="resource-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
+                <polyline points="15,3 21,3 21,9"/>
+                <line x1="10" y1="14" x2="21" y2="3"/>
+            </svg>
+            <div>
+                <a href="https://consumeraffairs.nic.in/" target="_blank" rel="noopener noreferrer">
+                    <h5>Department of Consumer Affairs</h5>
+                </a>
+                <p>Check company legitimacy and file complaints</p>
+            </div>
+        </div>
+
+        <div class="resource-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
+                <polyline points="15,3 21,3 21,9"/>
+                <line x1="10" y1="14" x2="21" y2="3"/>
+            </svg>
+            <div>
+                <a href="https://www.ncs.gov.in/" target="_blank" rel="noopener noreferrer">
+                    <h5>National Career Service (NCS)</h5>
+                </a>
+                <p>Government-backed job portal with safety tips</p>
+            </div>
+        </div>
+
+        <div class="resource-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
+                <polyline points="15,3 21,3 21,9"/>
+                <line x1="10" y1="14" x2="21" y2="3"/>
+            </svg>
+            <div>
+                <a href="https://sachet.rbi.org.in/" target="_blank" rel="noopener noreferrer">
+                    <h5>RBI Sachet Portal</h5>
+                </a>
+                <p>Report financial frauds and unregistered companies</p>
+            </div>
+        </div>
+    </div>
+</div>
+            </div>
+
+            <!-- Bottom Bar -->
+            <div class="footer-bottom">
+                <p>© 2024 Job Truth Finder. Educational resource for job scam awareness and prevention.</p>
+                <p class="disclaimer">This tool provides educational guidance only. Always verify job opportunities
+                    through official channels.</p>
+            </div>
+        </div>
+    </footer>
+    <script src="js/script.js"></script>
+
+</body>
+
+</html>
