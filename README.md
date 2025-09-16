@@ -21,16 +21,19 @@ fake-job-detection/
 │
 ├── data/                # Dataset files
 ├── notebooks/           # Jupyter notebooks (EDA, model building)
-├── src/                 # Source code (preprocessing, training, utils)
 ├── models/              # Saved ML models
+│   ├── model.pkl             # Trained ML model
+│   ├── vectorizer.pkl        # TF-IDF/CountVectorizer
 │
 ├── web/                 # Frontend files
-│ ├── index.html         # Main HTML file
+│ ├── index.html
+│ ├── hero-security.jpg  # Background image
 │ ├── css/
-│ │ └── style.css        # Stylesheet
+│ │ └── style.css
 │ └── js/
-│   └── script.js        # JavaScript for interactivity
+│   └── script.js
 │
+├── app.py               # Backend Flask app
 ├── requirements.txt     # Dependencies
 └── README.md            # Project documentation
 
