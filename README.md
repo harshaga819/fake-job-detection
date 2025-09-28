@@ -19,23 +19,26 @@ This project uses **Machine Learning** to detect and classify job postings as **
 
 fake-job-detection/
 │
-├── data/                # Dataset files
-├── notebooks/           # Jupyter notebooks (EDA, model building)
-├── models/              # Saved ML models
-│   ├── model.pkl             # Trained ML model
-│   ├── vectorizer.pkl        # TF-IDF/CountVectorizer
+├── data/
+│   └── FakeJobPostings.xlsx
+├── notebooks/            
+├── models/               
+│   ├── model.pkl         
+│   └── tfidf.pkl         
 │
-├── web/                 # Frontend files
-│ ├── index.html
-│ ├── hero-security.jpg  # Background image
-│ ├── css/
-│ │ └── style.css
-│ └── js/
-│   └── script.js
+├── static/               
+│   ├── css/
+│   │   └── style.css
+│   ├── js/
+│   │   └── script.js
+│   └── hero-security.jpg
 │
-├── app.py               # Backend Flask app
-├── requirements.txt     # Dependencies
-└── README.md            # Project documentation
+├── templates/
+│   └── index.html
+│
+├── app.py
+├── requirements.txt
+└── README.md
 
 ````
 ---
