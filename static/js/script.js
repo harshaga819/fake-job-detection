@@ -35,6 +35,27 @@ document.addEventListener('DOMContentLoaded', function () {
     jobTextarea.addEventListener('input', updateButtonState);
     updateButtonState();
 
+    /* ===============================
+    SCROLL REVEAL ANIMATION
+    ================================= */
+
+    const revealElements = document.querySelectorAll(".reveal");
+
+    function revealOnScroll() {
+        const windowHeight = window.innerHeight;
+
+        revealElements.forEach(el => {
+            const elementTop = el.getBoundingClientRect().top;
+
+            if (elementTop < windowHeight - 80) {
+                el.classList.add("visible");
+            }
+        });
+    }
+
+window.addEventListener("scroll", revealOnScroll);
+revealOnScroll();
+
        //ANALYZE BUTTON
 
     analyzeBtn.addEventListener('click', async () => {
